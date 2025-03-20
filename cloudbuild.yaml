@@ -19,18 +19,18 @@ steps:
 #   - --cluster=${_CLUSTER_NAME}
 
 # Step 4: Deploy the kubernetes workload to GKE cluster. (i.e. deployment.yaml, service.yaml and pvc.yaml)
-- name: 'gcr.io/cloud-builders/kubectl'
+- name: "gcr.io/cloud-builders/kubectl"
   env:
     - 'CLOUDSDK_COMPUTE_ZONE=${_CLUSTER_LOCATION}'
     - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER_NAME}'
   args:
     - apply
-      - -f
-      - ./kubernetes/service.yaml
-      - -f
-      - ./kubernetes/pvc.yaml
-      - -f
-      - ./kubernetes/deployment.yaml
+    - -f
+    - ./kubernetes/service.yaml
+    - -f
+    - ./kubernetes/pvc.yaml
+    - -f
+    - ./kubernetes/deployment.yaml
   
 
 substitutions:

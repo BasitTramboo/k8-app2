@@ -9,5 +9,6 @@ spec:
   selector:
     app: app2
   ports:
-  - port: 80
+  - protocol: TCP
+    port: 7000
     targetPort: 7000

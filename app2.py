@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/sum", methods=["POST"])
 def sum():
     sum = 0
-    # 1. Calculate sum of the product amounts
+    # 1. Calculate sum of the product amounts:
     with open("/Basit_PV_dir/"+request.json["file"]) as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
